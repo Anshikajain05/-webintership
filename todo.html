@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=9, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+    <input type="text" id="area2">
+    <button id="store">Store Data</button>
+    <button id="get">viewdata</button>
+    <div  id="taskpara"></div>
+     <script>
+        let datain=document.getElementById("area2")
+       let taskpara=document.getElementById("taskpara")
+       let task=[]
+        function storedata(){
+           let temp=datain.value
+           task.push(temp)
+           datain.value=""
+        }
+           function viewdata(){
+            for(let i=0;i<task.length;i++){
+           let newtask=document.createElement("p")
+          newtask.textContent=task[i]
+          taskpara.appendChild(newtask)
+          
+            }
+        }
+       
+    document.getElementById("store").addEventListener("click",storedata)
+    document.getElementById("get").addEventListener("click",viewdata)
+    </script>      
+</body>
+</html>
